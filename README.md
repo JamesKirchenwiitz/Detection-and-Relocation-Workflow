@@ -4,4 +4,4 @@
 
 
   ## Flowchart:
-  ![Relocation Workflow](https://github.com/JamesKirchenwiitz/Relocation-Workflow/blob/main/Script/Workflow%20flowchart.png)
+  add image
