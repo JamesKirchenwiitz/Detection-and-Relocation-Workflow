@@ -1,4 +1,4 @@
-Within this script folder is the associated workflow code to take you through template matching and HypoDD relocation. 
+# WORKFLOW:
 
 ### TEMPLATE MATCHING
 The folder titled "Template Matching" is home to all the code to take you from start to finish through the template matching algorith. 
@@ -8,4 +8,3 @@ This includes formatting of the files, order, and how to run them all successful
 ### RELOCATION
 The folder titled "Relocation" takes you through all the scripts needed to successfully relocate your expanded catalog. This folder includes a "helpfile" that can guide you through the steps / syntax if any problems arise.
 
-Here is a graphic that highlights the completed workflow that starts with template matching and ends with the relocated catalog:
