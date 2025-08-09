@@ -1,4 +1,5 @@
 Listed in this readme is the order and explanation of all the scripts / files needed to properly run template matching for given events
+NOTE: All of these are designed to be run directly from the command line in your localized linux machine
 
 TEMPLATE MATCHING FLOW:
 
