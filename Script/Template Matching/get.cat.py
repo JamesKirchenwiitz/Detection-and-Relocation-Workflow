@@ -48,7 +48,7 @@ print()
 print("Example output filename: getcatpy.karnescluster2.csv")
 output=input("Desired saved filename: ")
 
-# Box search (2020 M4.0 Event Search)
+# Box search (Target area)
 events = client.get_events(starttime=starttime, endtime=endtime, minlatitude=minlatitude, maxlatitude=maxlatitude, minlongitude=minlongitude, maxlongitude=maxlongitude, minmagnitude=minmagnitude)
 
 # Radius search
