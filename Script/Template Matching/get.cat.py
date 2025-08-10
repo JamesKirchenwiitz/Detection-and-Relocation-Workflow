@@ -23,12 +23,34 @@ import datetime as dt
 # Specify client you want to pull data from
 client = Client("USGS") 
 
-# specify duration of catalog search
-starttime = UTCDateTime("2020-01-01T00:00:00")
-endtime = UTCDateTime("2025-02-02T00:00:00")
+# specify variable of catalog search
+print("Example start date Format: 2020-01-01T00:00:00")
+startime = UTCDateTime(input("Start Date: "))
+print("")
+print("Example end date Formate: 2025-02-02T00:00:00")
+endtime = UTCDateTime(input("End Date: "))
+print()
+print("Example min latitude: 29.02")
+minlatitude=int(input("Area Minimum Latitude: "))
+print()
+print("Example max latitude: 29.15")
+maxlatitude=int(input("Area Maximum Latitude: "))
+print()
+print("Example min longitude: -97.93")
+minlongitude=int(input("Area minimum longitude: "))
+print()
+print("Example max longitude: -97.75")
+maxlongitude=int(input("Area minimum longitude: "))
+print()
+print("Example min magnitude: 0")
+minmagnitude=int(input("Lowest desired magnitude: "))
+print()
+print("Example output filename: getcatpy.karnescluster2.csv")
+output=int(input("Desired saved filename: "))
 
 # Box search (2020 M4.0 Event Search)
-events = client.get_events(starttime=starttime, endtime=endtime, minlatitude=29.02, maxlatitude=29.15, minlongitude=-97.93, maxlongitude=-97.75, minmagnitude=0)
+events = client.get_events(starttime=starttime, endtime=endtime, minlatitude=minlatitude, maxlatitude=maxlatitude, 
+                           minlongitude=-minlongitude, maxlongitude=-maxlongitude, minmagnitude=minmagnitude)
 
 # Radius search
 #events = client.get_events(starttime=starttime, endtime=endtime, latitude=28.939, longitude=-98.037,
@@ -70,6 +92,6 @@ df['dep'] = df['dep'].round(3)
 df = df[['epoch', 'decyear', 'lat', 'lon', 'dep', 'mag']]
 
 # Turning dataframe into csv file
-df.to_csv('getcatpy.karnescluster2.csv', index = False)
+df.to_csv(output, index = False)
 print(len(df))
 print('Done')
