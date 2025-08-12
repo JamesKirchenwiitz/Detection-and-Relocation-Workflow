@@ -68,18 +68,26 @@ awk -F "," '{if (NR==1) h=$0; else print h"\n"$0 > "csv/"n"."$1".csv"}' n=$num $
 # Manually set year
 ###################
 
+set yearday1 = ""
+set yearday2 = ""
+
 echo "example start date format: 2020 001"
-read -p "Enter year and day of year for start date: " yearday1 && echo "yearday1=$yearday1"
 
+echo -n "Enter year and day of year for start date: "
+set yearday1 = "$<"
 
-echo "example end date format: 2025 091"
-read -p "Enter year and day of year for end date: " yearday2 && echo "yearday2=$yearday2"
+echo -n "Example end date format: 2025 091"
 
+echo -n "Enter year and day of year for end date: "
+set yearday2 = "$<"
+
+echo "Start date: $yearday1"
+echo "End date: $yearday2"
 
 
 ### This is where we submit the jobs to the scheduler
 foreach csv ( csv/$num*csv )
-  sbatch -t 2880 --partition=serial_onecore --output=logs/slurm-%j.out cc.detect.yrs.3sta.mad.local.py $csv $yearday1 $yearday2 $num $stas
+  sbatch -t 2880 --partition=serial_onecore --output=logs/slurm-%j.out dependencies/cc.detect.yrs.3sta.mad.local.py $csv $yearday1 $yearday2 $num $stas
 end
 
 # sleep 60
