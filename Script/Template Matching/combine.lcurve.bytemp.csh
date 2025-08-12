@@ -29,7 +29,7 @@ if (! -e combine.bytemp.cc.$seqnum) then
  foreach temp (`\ls match/match.$seqnum.??????????.$sta* | awk -F "." '{for (i=2;i<=NF-6;i++) printf "%s.",$i;print $(NF-5) }' | sort -u`)
 
   set file=( match/match.$temp.*$sta* )
-  set cc=`lcurve.bytemp.log.csh $temp`
+  set cc=`dependencies/lcurve.bytemp.log.csh $temp`
 
   if ( `cat $file | wc -l` < 2 ) then
    set cc=0.9
@@ -46,7 +46,7 @@ else
  foreach temp (`\ls match/match.$seqnum.??????????.$sta* | awk -F "." '{for (i=2;i<=NF-6;i++) printf "%s.",$i;print $(NF-5) }' | sort -u`)
   set cc=`awk '$1==t{print $2}' t=$temp combine.bytemp.cc.$seqnum | tail -1`
   if ($cc == 0) then
-    set cc=`lcurve.3sta.csh $temp`
+    set cc=`dependencies/lcurve.3sta.csh $temp`
     if ( `cat $file | wc -l` < 2 ) then
      set cc=0.9
     endif
