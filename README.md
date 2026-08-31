@@ -4,4 +4,4 @@
 
 
   ## Flowchart:
-  ![Flow Chart](https://github.com/JamesKirchenwiitz/Detection-and-Relocation-Workflow/blob/main/Workflow%20flowchart.png)
+  ![Flow Chart](https://github.com/JamesKirchenwiitz/Detection-and-Relocation-Workflow/blob/main/workflow.png)
